@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RERVA TRAVELMANIA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>     
+<body>
+    <header>
+        <div class="logo"><span>RERVA</span> TRAVELMANIA</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#book">Book</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <i class="fas fa-search" id="search-btn"></i>
+            <i class="fas fa-user" id="login-btn"></i>
+        </div>
+        <form action=" " class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="search here.....">
+            <label for="search-bar" class="fas fa-search"></label>
+        </form>
+        <form action="javascript:void(0);" class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="search here....." required>
+            <button type="submit" id="search-submit-btn"><i class="fas fa-search"></i></button>
+        </form>
+        <div id="loginForm" class="form-popup">
+            <form action="" class="form-container" onsubmit="loginUser(event)">
+                <h2>Login</h2>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+        
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+        
+                <button type="submit" class="btn">Login</button>
+                <button type="button" class="btn cancel" onclick="closeLoginForm()">Close</button>
+                <button type="button" class="btn cancel" onclick="showSignupForm()">New Register? Sign up here</button>
+            </form>
+        </div>
+        
+        <div id="signupForm" class="form-popup">
+            <form action="" class="form-container" onsubmit="signupUser(event)">
+                <h2>Sign Up</h2>
+                <label for="fname"><b>First Name</b></label>
+                <input type="text" placeholder="Enter First Name" name="fname" required>
+        
+                <label for="lname"><b>Last Name</b></label>
+                <input type="text" placeholder="Enter Last Name" name="lname" required>
+        
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+        
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+        
+                <label for="psw-repeat"><b>Confirm Password</b></label>
+                <input type="password" placeholder="Confirm Password" name="psw-repeat" required>
+        
+                <button type="submit" class="btn">Submit</button>
+                <button type="button" class="btn cancel" onclick="closeSignupForm()">Close</button>
+            </form>
+        </div>
+    </header>
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="content">
+            <h3>Welcome to the world of adventure</h3>
+            <p>Discover new places with us, adventure awaits</p>
+            <a href="#" class="btn">Discover more</a>
+        </div>
+        <div class="controls">
+            <span class="vid-btn active" data-src="waterfalls.mp4"></span>
+            <span class="vid-btn" data-src="beach video.mp4"></span>
+            <span class="vid-btn" data-src="camel video.mp4"></span>
+            <span class="vid-btn" data-src="elephant video.mp4"></span>
+        </div>
+        <div class="video-container">
+            <video src="waterfalls.mp4" id="video-slider" loop autoplay muted></video>
+        </div>
+    </section>
+    <br/>
+    <br />
+    <br />
+    <br/>
+    <br /> 
+    <section class="book" id="book">
+        <h1 class="heading">
+            <span>B</span>
+            <span>O</span>
+            <span>O</span>
+            <span>K</span>
+            <span class="space"></span>
+            <span>N</span>
+            <span>O</span>
+            <span>W</span>
+        </h1>
+        <div class="row">
+            <div class="image">
+                <img src="booknow.png" alt="pic">
+            </div>
+    
+            <form id="bookingForm">
+                <div class="inputBox">
+                    <h3>Where To</h3>
+                    <input type="text" id="placeInput" placeholder="place name" required>
+                </div>
+                <div class="inputBox">
+                    <h3>How Many</h3>
+                    <input type="number" id="guestsInput" placeholder="number of guests" required>
+                </div>
+                <div class="inputBox">
+                    <h3>Arrivals</h3>
+                    <input type="date" id="arrivalInput" required>
+                </div>
+                <div class="inputBox">
+                    <h3>Leaving</h3>
+                    <input type="date" id="departureInput" required>
+                </div>
+                <center>
+                    <input type="submit" class="btn" value="book now">
+                </center>
+            </form>
+        </div>
+    </section>
+        <br/>
+    <br />
+    <br /> 
+    <br /> 
+    <br /> 
+    <!----- service section starts-->
+    <section class="services" id="services">
+        <h1 class="heading">
+            <span>O</span>
+            <span>U</span>
+            <span>R</span>
+            <span class="space"></span>
+            <span>S</span>
+            <span>E</span>
+            <span>R</span>
+            <span>V</span>
+            <span>I</span>
+            <span>C</span>
+            <span>E</span>
+            <span>S</span>
+        </h1>
+        <div class="box-container">
+            <div class="box">
+                <image src="adventurer.png" alt="adventure" style="width: 100px; height: auto;">
+                <h3>adventure</h3>
+                </image>
+            </div>
+            <div class="box">
+                <image src="scuba-diving.png" alt="" style="width: 100px; height: auto;">
+                <h3>water sports</h3>
+                </image>
+            </div>
+            <div class="box">
+                <image src="tent.png" alt="" style="width: 100px; height: auto;">
+                <h3>Camps </h3>
+                </image>
+            </div>
+            <div class="box">
+                <image src="tour-guide.png" alt="" style="width: 100px; height: auto;">
+                <h3>tour guide</h3>
+                </image>
+            </div>
+            <div class="box">
+                <image src="hike.png" alt="hike" style="width: 100px; height: auto;">
+                <h3>trekking</h3>
+                </image>
+            </div>
+            <div class="box">
+                <image src="flight option.png" alt="" style="width: 100px; height: auto;">
+                <h3>Flights</h3>
+                </image>
+            </div>
+        </div>
+    </section>
+    <br />
+    <br />
+    <br />
+    <br />
+    <!------packages starts-->
+    <section class="packages" id="packages">
+        <h1 class="heading">
+            <span>P</span>
+            <span>A</span>
+            <span>C</span>
+            <span>K</span>
+            <span>A</span>
+            <span>G</span>
+            <span>E</span>
+            <span>S</span>
+        </h1>
+        <div class="box-container">
+            <div class="box">
+                <div class="image">
+                    <img src="taj mahal.jpg" alt="">
+                </div>
+                <div class="content">
+                    <br />
+                    <h3>Taj Mahal</h3>
+                    <p>A sublime masterpiece of timeless beauty etched in marble.</p>
+                    <a href="#book" class="btn">Book Now</a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="andaman.jpg" alt="">
+                </div>
+                <div class="content">
+                    <br />
+                    <h3>Andaman and Nicobar</h3>
+                    <p>Where pristine beaches meet untouched wilderness, offering a paradise for the senses."</p>
+                    <a href="#book" class="btn">Book Now</a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="vagamon.jpg" alt="">
+                </div>
+                <div class="content">
+                    <br/>
+                    <h3>vagamon</h3>
+                    <p>Where misty meadows dance with whispering pines, painting a canvas of serenity.</p>
+                    <a href="#book" class="btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <h1 class="heading">
+            <span>G</span>
+            <span>A</span>
+            <span>L</span>
+            <span>L</span>
+            <span>E</span>
+            <span>R</span>
+            <span>Y</span>
+        </h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="g1.jpg" alt="">
+                <div class="content">
+                    <h3> Amazing Places</h3>
+                    <p>Here's the world of Exotic nature  </p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="g2.jpg" alt="">
+                <div class="content">
+                    <h3> Amazing Places</h3>
+                    <p>Here's the world of Exotic nature  </p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="g3.jpg" alt="">
+                <div class="content">
+                    <h3> Amazing Places</h3>
+                    <p>Here's the world of Exotic nature  </p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="g4.jpg" alt="">
+                <div class="content">
+                    <h3> Amazing Places</h3>
+                    <p>Here's the world of Exotic nature  </p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="g5.jpg" alt="">
+                <div class="content">
+                    <h3> Amazing Places</h3>
+                    <p>Here's the world of Exotic nature  </p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="g6.jpg" alt="">
+                <div class="content">
+                    <h3> Amazing Places</h3>
+                    <p>Here's the world of Exotic nature  </p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-----ABOUT US STARTS -->
+    <section class="about" id="about">
+        <h1 class="heading">
+            <span>A</span>
+            <span>B</span>
+            <span>O</span>
+            <span>U</span>
+            <span>T</span>
+            <span class="space"></span>
+            <span>U</span>
+            <span>S</span>
+        </h1>
+        <div class="image">
+            <img src="undraw_team_work_k80m.png" alt="">
+        </div>
+        <div class="content">
+            <p>Welcome to Travelmania, where we believe in making every journey an unforgettable adventure. Our mission is to provide travelers with the freedom to explore the world on their terms, creating experiences that are as unique as the individuals who embark on them.</p>
+        <p>At Travelmania, we understand that every traveler seeks something different from their journey - whether it's a thrilling escapade, a peaceful retreat, or a cultural immersion. That's why we offer a diverse range of destinations, activities, and accommodations to suit every taste and budget.</p>
+        <p>With years of experience in the travel industry, we've helped countless travelers create memories that last a lifetime. From solo adventurers to family vacations and group tours, we've delighted in seeing our customers discover new places, forge lasting friendships, and return home with stories to share.</p>
+        <h3>Our Impact</h3>
+        <p>Here's a glimpse of our impact:</p>
+        <center>
+        <table border="2">
+            <tr>
+                <th>Total Trips</th>
+                <th>Happy Travelers</th>
+                <th>Total Customers</th>
+            </tr>
+            <tr>
+                <td>5000+</td>
+                <td>10,000+</td>
+                <td>25,000+</td>
+            </tr>
+        </table>
+    </center>
+        <p>Join us at Travelmania and let's embark on your next great adventure together!</p>
+        <a href="#" class="btn"><center>Read more</center></a>
+        </div>
+    </section>
+    <br/>
+    <br/>
+    <br/>
+    <!---Review Section-->
+    <section class="review" id="review">
+        <h1 class="heading">
+            <span>R</span>
+            <span>E</span>
+            <span>V</span>
+            <span>I</span>
+            <span>E</span>
+            <span>W</span>
+        </h1>
+        <div class="review-slider">
+            <div class="wrapper">
+                <div class="slider">
+                    <div class="box">
+                        <img src="asian girl.jpg" alt="">
+                        <h3>Naomi</h3>
+                        <p>It was my pleasant experiencewhere I had lot of fun and the packages were at  minimal  cost </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="box">
+                        <img src="indian girl.jpg" alt="">
+                        <h3>Vedha</h3>
+                        <p>It was my pleasant experiencewhere I had lot of fun and the packages were at  minimal  cost </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="box">
+                        <img src="foeign boy.jpg" alt="">
+                        <h3>John</h3>
+                        <p>It was my pleasant experiencewhere I had lot of fun and the packages were at  minimal  cost </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Footer Section -->
+    <section class="contact" id="contact">
+    <section class="footer" >
+        <div class="box-container">
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="#home"> <i class="fas fa-angle-right"></i>Home</a>
+                <a href="#book"> <i class="fas fa-angle-right"></i>Book</a>
+                <a href="#packages"> <i class="fas fa-angle-right"></i>Packages</a>
+                <a href="#services"> <i class="fas fa-angle-right"></i>Services</a>
+            </div>
+            <div class="box">
+                <h3>Further Details</h3>
+                <a href="#"> <i class="fas fa-angle-right"></i>Ask Me</a>
+                <a href="#"> <i class="fas fa-angle-right"></i>About Us</a>
+                <a href="#"> <i class="fas fa-angle-right"></i>Privacy Policy</a>
+                <a href="#"> <i class="fas fa-angle-right"></i>Terms of Use</a>
+            </div>
+            <div class="box">
+                <h3>Contact Details</h3>
+                <a href="#"> <i class="fas fa-phone"></i>+188-256-7890</a>
+                <a href="#"> <i class="fas fa-phone"></i>+111-256-7890</a>
+                <a href="#"> <i class="fas fa-envelope"></i>rervatravel@gmail.com</a>
+                <a href="#"> <i class="fas fa-map"></i>chennai,India-600001</a>
+            </div>
+            <div class="box">
+                <h3>Follow Us</h3>
+                <a href="#"><i class="fab fa-facebook-f"></i>facebook</a>
+                <a href="#"><i class="fab fa-twitter"></i>twitter</a>                
+                <a href="#"><i class="fab fa-instagram"></i>instagram</a>
+                <a href="#"><i class="fab fa-linkedin"></i>linkedin</a>
+            </div>
+        </div>
+        <div class="credit">Created by <span>Yukthika</span>| All Rights Reserved!</div>
+    </section>
+</section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
